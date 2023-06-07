@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- external Stylesheet -->
+    <link rel="stylesheet" href="/statics/css/updatedStyles.css">
+</head>
+<body>
+  <!-- START HEADING PART -->
+
+    <!-- START Section above Header -->
+    <div class="header">
+      <h2>1.2 IHK-Aufgabe</h2>
+      <p>Scroll down to see the sticky effect.</p>
+    </div>
+    <!-- END Section above Header -->
+
+    <!-- START Header / Nav -->
+    <div class="" id="navbar">
+      <div class="topnav" id="myTopnav" >
+          <a href="/statics/html/index.html" class="active">Home</a>
+
+          <div class="dropdown">
+            <button class="dropbtn">IHK
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="ihk_11.html">1.1: Bubblesort</a>
+              <a href="ihk_12.html">1.2: Datenauswertung</a>
+              <a href="ihk_13.html">1.3: Stringkomprimierung</a>
+              <a href="ihk_14.html">1.4: getAppointment</a>
+              <a href="ihk_15.html">1.5: Passwort Generator</a>
+            </div>
+          </div> 
+
+          <div class="dropdown">
+            <button class="dropbtn">UML
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+             <a href="uml_11.html">1.1: Aktivitätsdiagramm</a>
+              <a href="uml_12.html">1.2: IHK-Aufgabe</a>
+              <a href="uml_13.html">1.3: Django: Aktivitätsdiagramm</a>
+              <a href="uml_14.html">1.4: Cheatsheet: Sequenzdiagramm</a>
+            </div>
+          </div> 
+
+          <div class="dropdown">
+            <button class="dropbtn">Django
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="lesson3_1.html">Lesson4.1 Calculator</a>
+            </div>
+          </div>
+
+
+          
+          <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+    </div>
+    <!-- END Header / Nav -->
+
+  <!-- END HEADING PART -->
+
+
+  <!-- START Content  -->
+  <div class="container content" style="margin-top: 69px;/* height: auto; */">
+
+    <div class="flex-container">
+      <a class="btn btn-secondary" href="uml_11.html">Back</a>
+      <a class="btn btn-primary" href="uml_13.html">Next</a>
+    </div>
+
+    <div class="grid-container">
+
+        <!-- Frist Content Block  -->
+        <aside>
+          <h3>Tipps</h3>
+          <ul>
+            <li><a href="https://www.geeksforgeeks.org/unified-modeling-language-uml-introduction/">UML</a></li>
+            <li><a href="https://www.geeksforgeeks.org/unified-modeling-language-uml-activity-diagrams/">Aktivitätsdiagramm</a></li>
+        </ul>
+        </aside>
+        <section>
+            <article>
+                <h2>IHK-Aufgabe</h2>
+                <img src="../img/uml/aktivitaets_IHK_aufgabe.png" alt="">
+            </article>
+        </section>
+
+        <!-- Second Content Block  -->
+        <aside>aside</aside>
+        <section>
+            <article>
+                <h2>PAP, Strukugramm oder Pseudocode</h2>
+                <p>Platzieren sie ihren Entwurf hier</p>
+                <img src="" alt="" srcset="">
+            </article>
+        </section>
+
+        <!-- Third Content Block  -->
+        <aside>aside</aside>
+        <section>
+            <article>
+                <h2>Vorgehensweise</h2>
+                <h3>Makierungen</h3>
+                <img src="../img/uml/aktivitaet_ihk_aufgabe_makierungen.png" alt="">
+            </article>
+
+        </section>
+
+        <!-- Fourth Content Block  -->
+        <aside>aside</aside>
+        <section>
+            <article>
+                <h2>Lösungen</h2>
+                <h3>Teil-1</h3>
+                <img src="../img/uml/aktivitaet_ihk_aufgabe_loesung1.png" alt="">
+                <h3>Teil-2</h3>
+                <img src="../img/uml/aktivitaet_ihk_aufgabe_loesung2.png" alt="">
+            </article>
+        </section>
+
+
+
+
+        
+    </div>
+  </div>
+  <!-- ENDE Content  -->
+
+
+  <!-- START <Footer>  -->
+  <footer>
+    <div class="container">Footer</div>
+  </footer>
+  <!-- END Footer  -->
+
+  <!-- JS -->
+  <script>
+    // JS: Header
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+        x.className += " responsive";
+        } else {
+        x.className = "topnav";
+        }
+    }
+
+    // JS: StickyHeader
+    window.onscroll = function() {stickyFunction()};
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function stickyFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+  </script>
+
+</body>
+</html>

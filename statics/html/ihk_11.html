@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- external Stylesheet -->
+    <link rel="stylesheet" href="../css/updatedStyles.css">
+</head>
+<body>
+
+<div class="header">
+  <h2>1.1 Bubblesort</h2>
+  <p>Scroll down to see the sticky effect.</p>
+</div>
+
+<div class="" id="navbar">
+  <div class="topnav" id="myTopnav" >
+      <a href="/statics/html/index.html" class="active">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">IHK
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+           <a href="ihk_11.html">1.1: Bubblesort</a>
+              <a href="ihk_12.html">1.2: Datenauswertung</a>
+              <a href="ihk_13.html">1.3: Stringkomprimierung</a>
+              <a href="ihk_14.html">1.4: getAppointment</a>
+              <a href="ihk_15.html">1.5: Passwort Generator</a>
+        </div>
+      </div> 
+
+      <div class="dropdown">
+        <button class="dropbtn">UML
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="uml_11.html">1.1: Aktivitätsdiagramm</a>
+              <a href="uml_12.html">1.2: IHK-Aufgabe</a>
+              <a href="uml_13.html">1.3: Django: Aktivitätsdiagramm</a>
+              <a href="uml_14.html">1.4: Cheatsheet: Sequenzdiagramm</a>
+        </div>
+      </div> 
+
+      <div class="dropdown">
+        <button class="dropbtn">Django
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="lesson3_1.html">Lesson4.1 Calculator</a>
+        </div>
+      </div>
+
+
+      
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+</div>
+
+    <!-- START Content  -->
+    <div class="container content" style="margin-top: 69px;/* height: auto; */">
+
+      <!-- NAV container (Back/Next) -->
+      <div class="flex-container">
+        <a class="btn btn-secondary" href="index.html">Back</a>
+        <a class="btn btn-primary" href="ihk_12.html">Next</a>
+      </div>
+
+      <div class="grid-container">
+  
+          <!-- Frist Content Block:  -->
+          <!-- AUFGABE -->
+          <aside>
+            <h3>Tipps</h3>
+            <ul>
+              <li><a href="https://de.wikipedia.org/wiki/Bubblesort">Wiki</a></li>
+              <li><a href="https://www.w3schools.com/js/js_if_else.asp">if else</a></li>
+              <li><a href="https://www.w3schools.com/js/js_loop_for.asp">Loops</a></li>
+              <li><a href="https://www.w3schools.com/js/js_functions.asp">functions</a></li>
+              <li><a href="https://www.w3schools.com/jsref/event_onclick.asp">onclick</a></li>
+              <li><a href="https://www.w3schools.com/jsref/event_onclick.asp">getElementById</a></li>
+            </ul>
+          </aside>
+          <section>
+              <article>
+                <h1>IHK - 1.1</h1>
+                <h2>Aufgabe: Bubblesort</h2>
+                <img src="../img/11_bubblesort/IHK_Task_bubblesort.png" alt="IHK Aufgabe: psudocode" srcset="">
+                <br><br>
+                <h4>Kontext:</h4>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Bubble-sort-example-300px.gif/220px-Bubble-sort-example-300px.gif" alt="">
+                <br><br>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Bubblesort_Animation.gif/220px-Bubblesort_Animation.gif" alt="">
+                <br><br>
+            </article>
+          </section>
+  
+          <!-- Second Content Block  -->
+          <!-- PLANUNG -->
+          <aside>
+            <h3>Tipps</h3>
+            <p>Hier soll entweder ein PAP, Pseudocode oder Struktugramm zur Planung vor der Codierung in JavaScript erstellt werden.</p>
+        </aside>
+          <section>
+              <article><h2>Planung</h2></article>
+                <h3>Struktogramme</h3>
+                <h4>Simple</h4>
+                <img src="../img/11_bubblesort/simple.jpg" alt="">
+                <h4>u13 Drawing - whiteboard</h4>
+                <img src="../img/11_bubblesort/u13_drawing.png" alt="" srcset="">
+                <h4>Detailed</h4>
+                <img src="../img/11_bubblesort/detailed.png" alt="">
+                <br>
+                <h3>Pseudocode</h3>
+                <img src="../img/11_bubblesort/pseudocode.jpg" alt="">
+                <h3>PAP</h3>
+          </section>
+  
+          <!-- Third Content Block  -->
+          <!-- Lösung -->
+          <aside>            
+            <h3>Tipps</h3>
+            <ul>
+              <li><a href="">getElementById</a></li>
+              <li><a href="">Array</a></li>
+            </ul></aside>
+          <section>
+            <article>
+                <h2>Lösung: Lesson1.1 - Bubblesort</h2>
+                <input type="number" value="1" id="input">
+                <button onclick="pushArray()" >Wert dem Array hinzufügen</button>
+                <br>
+                <p id="output"></p>
+                <br>
+                <button onclick="bubblesort()">Array Sortieren</button>
+                <p id="outputIncrement"></p>
+                <p id="outputArray"></p>
+            </article>
+
+          </section>
+  
+
+  
+  
+  
+  
+          
+      </div>
+  </div>
+  <!-- ENDE Footer  -->
+
+  <!-- START Content  -->
+  <footer>
+    <div class="container">Footer</div>
+  </footer>
+  <!-- END Footer  -->
+
+  <!-- JS -->
+  <script>
+  // JS: Header
+  function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+      x.className += " responsive";
+      } else {
+      x.className = "topnav";
+      }
+  }
+
+  // JS: StickyHeader
+  window.onscroll = function() {stickyFunction()};
+
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+
+  function stickyFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+  </script>
+  <script src="../js/bubblesort.js"></script>
+
+</body>
+</html>

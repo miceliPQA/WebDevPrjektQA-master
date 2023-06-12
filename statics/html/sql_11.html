@@ -10,8 +10,8 @@
 
     <!-- START Section above Header -->
     <div class="header">
-      <h2>CHEATSHEET-Aktivitätsdiagramm</h2>
-      <p>UML Aktivitätsdiagramm </p>
+      <h2>SQL</h2>
+      <p>SQL-Cheatsheet </p>
     </div>
     <!-- END Section above Header -->
 
@@ -83,17 +83,47 @@
         </ul>
         </aside>
         <section>
-            <h1>CHEATSHEET - UML Aktivitätsdiagramm </h1>
+            <h1>CHEATSHEET - SQL </h1>
             <article>
-                <h2>Definition: Aktivitätsdiagramm</h2>
+                <h2>Definition: SQL-Cheatsheet</h2>
                 <ul>
-                    <li>ist ein Verhaltensdiagramm der Unified Modeling Language (UML)</li>
-                    <li>stellt die Vernetzung von elementaren Aktionen und deren Verbindungen mit Kontroll- und Datenflüssen grafisch dar.</li>
+                    <li>Datenabfrage: Mit SQL können Benutzer Daten aus einer oder mehreren Tabellen abrufen, indem sie SELECT-Abfragen verwenden. Sie können Bedingungen festlegen, um die abgerufenen Daten zu filtern und die Ergebnisse nach verschiedenen Kriterien zu sortieren.
+                    </li>
+                    <li>Datenmanipulation: SQL bietet Möglichkeiten zur Einfügung (INSERT), Aktualisierung (UPDATE) und Löschung (DELETE) von Daten in einer Datenbank. Dadurch können Benutzer neue Datensätze hinzufügen, vorhandene aktualisieren oder nicht mehr benötigte Datensätze entfernen.
+                    </li>
+                    <li>Datenbankstrukturverwaltung: Mit SQL können Benutzer Datenbanken, Tabellen, Indizes und andere Objekte erstellen, ändern oder löschen. Sie können Tabellen erstellen, Spalten hinzufügen oder entfernen, Indizes definieren und Einschränkungen festlegen, um die Datenintegrität zu gewährleisten.
+                    </li>
+                    <li>Datenbankadministration: SQL bietet auch Befehle für die Benutzerverwaltung, Zugriffssteuerung und Sicherheit in einer Datenbank. Benutzer können Benutzerkonten erstellen, Berechtigungen vergeben und den Zugriff auf Daten und Datenbankobjekte steuern.
+                    </li>
                 </ul>
-                <h3>Beispiel-1:</h3>
-                <img src="../img/uml/aktivitaet_Beispiel1.png" alt="">
-                <h3>Beispiel-2:</h3>
-                <img src="../img/uml/aktivitaet_Beispiel2.png" alt="">
+                <h2>Beispiel-Aufgabe 1:</h2>
+                <img src="/statics/img/sql/SQLAufgabe1.png" alt="">
+                <h3>Lösung 1 mit EquiJoin:</h3>
+                <li>		SELECT P.Datum_Soll AS Datum,
+                    WEEKDAY(P.Datum_Soll) AS Wochentag,
+                    T.Bezeichnung AS Tätigkeit</li>
+             <li> FROM Pflegearbeiten AS P, Objekt AS O, Tätigkeit AS T
+             Where O.OID = P.OID 
+             AND T.TID = P.TID
+             AND Datum BETWEEN '2023-06-19' AND '2023-06-30'
+             AND O.Bezeichnung = 'Außenlage Nord'</li>
+             <li> ORDER BY Datum ASC;</li>
+             <br>
+             <br>
+             <h3>Lösung 2 mit InnerJoin:</h3>
+            
+             <li>		SELECT P.Datum_Soll AS Datum,
+                    WEEKDAY(P.Datum_Soll) AS Wochentag,
+                    T.Bezeichnung AS Tätigkeit</li>
+             <li>		FROM Pflegearbeiten AS P
+                INNER JOIN Objekt AS O ON O.OID = P.OID
+                INNER JOIN Tätigkeit AS T ON T.TID = P.TID</li>
+             <li>		WHERE P.Datum_Soll BETWEEN '2023-06-19' AND '2023-06-30'
+                AND O.Bezeichnung = 'Außenanlage Nord'</li>
+      
+             <li> ORDER BY Datum ASC;</li>
+     
+                
             </article>
         </section>
 
@@ -101,10 +131,12 @@
         <aside>aside</aside>
         <section>
             <article>
-                <h2>IHK-Beispiel-Aufgabe</h2>
-                <img src="../img/uml/aktivitaet_CS_aufgabe.png" alt="" srcset="">
+                <h2>Beispiel-Aufgabe 2:</h2>
+                <img src="/statics/img/sql/SQLAufgabe2.png" alt="" srcset="">
                 <h3>Lösung</h3>
-                <img src="../img/uml/aktivitaet_CS_loesung.png" alt="">
+                <li>SELECT COUNT (PID, OID, Datum_Soll, Datum_Abschluss) </li>
+                <li>FROM Pflegearbeit</li>
+                <li>WHERE YEAR(Datum_Soll)  = 2023 AND YEAR(Datum_Soll) =  NULL</li>
             </article>
         </section>
 
@@ -113,30 +145,28 @@
         <section>
             <article>
                 <h2>Vorgehensweise</h2>
-                <ol>
+                <ul>
                     <b><li>Makieren</li></b>
-                    <ol>
-                        <li>Akteure im Text ausfindig machen</li>
-                        <li>Aktionen der Akteure herausfinden</li>
-                        <li>Aktionen sinnvoll benennen</li>
-                        <li>Kontrollstrukturen ermitteln - z.B. Schliefen, Verzweigungen, Parallele Aktionen</li>
-                    </ol>
+                    <ul>
+                        <li>Step 1 
+                            (Select) Identify all Columns that are neccessary</li>
+                        
+                        <li>Step 2
+                            (From) Identify all Tables that are neccessary and convert into shortform with AS</li>
+                        
+                        <li>Step 3
+                            (WHERE) Check all Conditions it is recommended to use EquiJoin rather than JOINS
+                                AND 'Check Conditions'
+                              
+                        </li>
+                        <li>3.1 Check key equivalent </li>
+                        <li>3.2 Filter all DATA</li>
+                        <li>Sort all DATA (ASC; DES) Group by etc.</li>
+                       
+                    </ul>
                     <br>
-                    <b><li>Vorüberlegungen anstellen</li></b>
-                    <ol>
-                        <li>Wenn nötig Skizze anfertigen </li>
-                    </ol>
-                    <br>
-                    <b><li>Zeichen</li></b>
-                    <ol>
-                        <li>Text schritt für Schritt durchgehen</li>
-                        <li>Akteure einzeichnen </li>
-                        <ol>
-                            <li>Pro Akteur eine Schwimmbahn anlegen</li>
-                            <li>Aktionen bei den passenden Akuteren eintragen </li>
-                        </ol>
-                    </ol>
-                </ol>
+                    
+                </ul>
 
             </article>
 
